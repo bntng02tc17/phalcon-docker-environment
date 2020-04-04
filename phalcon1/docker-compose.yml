@@ -1,0 +1,26 @@
+version: "3.2"
+networks:
+    backend:
+    frontend:
+services:
+    web-server:
+        build:
+            context: ./web-server/
+            dockerfile: Dockerfile
+        ports:
+            - "8000:80"
+        networks:
+            - backend
+            - frontend
+        volumes:
+            - ./src:/var/www/html/
+    db:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        ports:
+            - "1433:1433"
+        networks:
+            - backend
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=yourPASSWORDis***
+
