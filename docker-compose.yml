@@ -3,9 +3,9 @@ networks:
     backend:
     frontend:
 services:
-    web-server:
+    webserver:
         build:
-            context: ./web-server/
+            context: ./webserver/
             dockerfile: Dockerfile
         ports:
             - "8000:80"
@@ -13,7 +13,7 @@ services:
             - backend
             - frontend
         volumes:
-            - ./src:/var/www/html/
+            - ./html/var/www/html/
     db:
         image: mcr.microsoft.com/mssql/server:2019-latest
         ports:

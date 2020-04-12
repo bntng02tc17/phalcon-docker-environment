@@ -1,3 +1,5 @@
+
+#PHALCON REQUIREMENT
 FROM php:7.3-apache
 RUN apt-get -y update && apt-get -y upgrade
 ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
